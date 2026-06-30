@@ -42,7 +42,7 @@ node app.js 15   # Output: Buonasera!
 node app.js 22   # Output: Buonanotte!
 ```
 
-**Cosa imparato:**
+**Cosa ho imparato:**
 - Uso di `process.argv` per leggere argomenti da riga di comando
 - Logica condizionale in Node.js
 - Esecuzione di script JavaScript al di fuori del browser
@@ -123,4 +123,3 @@ node todo.js add "Nuovo compito"
 node todo.js remove 1
 node todo.js help
 ```
-> **Progetto realizzato con passione per imparare e crescere come sviluppatore.**
