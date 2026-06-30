@@ -18,6 +18,7 @@ L'esercizio nasce con questi obiettivi principali:
 - **Gestire file JSON** per la persistenza dei dati
 - **Utilizzare process.argv** per ricevere input da riga di comando
 - **Applicare i concetti di modulo ES6** (import/export) in Node.js
+- **Gestire stati e proprietà** degli oggetti in formato JSON
 
 ## 📂 Struttura del Progetto
 
@@ -49,23 +50,34 @@ node app.js 22   # Output: Buonanotte!
 
 ### 2. To-Do List CLI (`todo.js`)
 
-Una completa applicazione da terminale per gestire una lista di cose da fare con persistenza su file JSON.
+Una completa applicazione da terminale per gestire una lista di cose da fare con persistenza su file JSON. **Le task completate rimangono nella lista e vengono contrassegnate con `[x]`.**
 
 **Comandi disponibili:**
 
 | Comando | Descrizione | Esempio |
 |---------|-------------|---------|
-| `list` | Mostra tutti i task | `node todo.js list` |
+| `list` | Mostra tutti i task (con `[ ]` non completati, `[x]` completati) | `node todo.js list` |
 | `add` | Aggiunge un nuovo task | `node todo.js add "Comprare il latte"` |
 | `remove` | Rimuove un task per indice | `node todo.js remove 1` |
+| `done` | Segna un task come completato (rimane nella lista) | `node todo.js done 1` |
 | `help` | Mostra la guida | `node todo.js help` |
 
-**Cosa imparato:**
+**Esempio di output:**
+```
+La tua lista To-Do:
+1. [x] Studiare Node.js
+2. [x] Fare esercizi
+3. [ ] Pubblicare la repository
+```
+
+**Cosa ho imparato:**
 - Lavorare con il modulo **`fs`** (File System) per leggere e scrivere file
-- Parsing e serializzazione di dati **JSON**
+- Parsing e serializzazione di dati **JSON** con struttura avanzata (oggetti con proprietà)
 - Gestione degli argomenti da riga di comando
 - Creazione di un'interfaccia a riga di comando interattiva
 - Persistenza dei dati senza database
+- Gestione dello **stato** delle task (completato/non completato)
+- Manipolazione di array di oggetti in JavaScript
 
 ## 🛠 Tecnologie e Strumenti Utilizzati
 
@@ -73,7 +85,7 @@ Una completa applicazione da terminale per gestire una lista di cose da fare con
 - **ES Modules** - Sintassi moderna `import/export` per i moduli
 - **Modulo fs** - Per operazioni sul file system
 - **Modulo process** - Per interagire con il processo Node.js e gli argomenti CLI
-- **JSON** - Formato per la persistenza dei dati
+- **JSON** - Formato per la persistenza dei dati strutturati
 - **pnpm** - Package manager utilizzato per la gestione delle dipendenze
 
 ## 💡 Competenze Acquisite
@@ -83,14 +95,10 @@ Attraverso questo esercizio ho sviluppato le seguenti competenze:
 1. **Configurazione di un progetto Node.js** (inizializzazione, package.json)
 2. **Esecuzione di script** tramite terminale
 3. **Lettura e scrittura di file** tramite il modulo fs
-4. **Gestione dei dati** in formato JSON
+4. **Gestione dei dati strutturati** in formato JSON
 5. **Sviluppo di tool CLI** con input utente
-6. **Debugging** di applicazioni Node.js
-7. **Gestione delle dipendenze** tramite package manager
+6. **Gestione delle dipendenze** tramite package manager
 
-## 🎓 Contesto Formativo
-
-Questo progetto è stato sviluppato durante il percorso **Web Development** di **Boolean**.
 
 ## 🚀 Come Eseguire il Progetto
 
@@ -120,6 +128,7 @@ node app.js 10
 # Utilizzare la To-Do List
 node todo.js list
 node todo.js add "Nuovo compito"
-node todo.js remove 1
+node todo.js done 1         # Segna il compito 1 come completato
+node todo.js remove 2       # Rimuove il compito 2
 node todo.js help
 ```
